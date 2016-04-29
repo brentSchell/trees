@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tree</title>
+    <script src="processing.min.js"></script>
+	<style>
+		body {
+			background-color: white;
+			text-align: center;
+		}
+		
+		cvs {
+			text-align: center;
+		}
+		
+		.t1 {
+			size = "1";
+		}
+		
+		.hide {
+			display: none;
+		}
+		
+		.input-box {
+			font-size: 24px;
+			width: 30px;
+		}
+	</style>
+</head>
+<body >
+	<div id="in">
+		<br>
+		<br>
+		<br>
+		<input id="in1" type="text" class="input-box" maxlength="1">
+		<input id="in2" type="text" class="input-box" maxlength="1">
+		<input id="in3" type="text" class="input-box" maxlength="1">
+		<input id="in4" type="text" class="input-box" maxlength="1">
+		<input id="in5" type="text" class="input-box" maxlength="1">
+		<br>
+		<br>
+		<br>
+		<input class="t1" type="submit" value="Enter" onClick="trySubmit()">
+		<br>
+	</div>
+	<canvas id="id_cvs" class="cvs hide" data-processing-sources="tree_puz.pde"></canvas>
+	
+	<script>
+		function trySubmit() {
+			var i1 = document.getElementById("in1").value;
+			var i2 = document.getElementById("in2").value;
+			var i3 = document.getElementById("in3").value;
+			var i4 = document.getElementById("in4").value;
+			var i5 = document.getElementById("in5").value;
+			
+			if ( (i1 == "b" || i1 == "B") && (i2 == "u" || i2 == "U") && (i3 == "b" || i3 == "B") && (i4 == "b" || i4 == "B") && (i5 == "a" || i5 == "A") ) {
+				var obj_in = document.getElementById("in");
+				var obj_cvs = document.getElementById("id_cvs");
+				obj_in.style.display = "none";
+				obj_cvs.style.display = "inline";
+				
+			} else {
+				alert("Incorrect. Try again.");
+			}
+		}
+	</script>
+</body>
+</html>
